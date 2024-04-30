@@ -6,6 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="nav3-jq.css">
+    <script src="./js/jquery-3.7.1.min.js"></script>
+
+    <script>
+        $(function () {
+            // 隱藏第二層
+            $("#nav li ul").hide();
+        })
+        $(function () {
+            $("#nav li").hover(function () {
+                // 碰到時往下滑動
+                $(">ul", this).slideDown("fast");
+            }, function () {
+                // 離開時網上滑動
+                $(">ul", this).slideUp("fast");
+            });
+        })
+
+    </script>
 </head>
 
 <body>
@@ -24,24 +42,51 @@
                         <li><a href="#">03</a></li>
                     </ul>
                 </li>
-                
-                <!--                 
+
+
                 <li class="color-red"><a href="#">menu2</a>
                     <ul class="subs">
                         <li><a href="#">04</a></li>
                         <li><a href="#">05</a></li>
                         <li><a href="#">06</a>
-                            <ui>
+                            <ul>
                                 <li><a href="#">06-1</a></li>
                                 <li><a href="#">06-2</a></li>
-                            </ui>
+                            </ul>
                         </li>
                     </ul>
                 </li>
-                -->
+
+                <li class="color-green"><a href="#">menu3</a>
+                    <ul class="subs">
+                        <li><a href="#">07</a>
+                            <ul>
+                                <li><a href="#">07-1</a></li>
+                                <li><a href="#">07-2</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">08</a></li>
+                        <li><a href="#">09</a></li>
+                    </ul>
+                </li>
+
+                <li class="color-yellow"><a href="#">menu4</a>
+                    <ul class="subs last">
+                        <li><a href="#">10</a>
+                            <ul>
+                                <li><a href="#">10-1</a></li>
+                                <li><a href="#">10-2</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">11</a></li>
+                        <li><a href="#">12</a></li>
+                    </ul>
+                </li>
+
             </ul>
         </div>
     </div>
+    <script></script>
 </body>
 
 </html>
