@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 500px;
+            height: 350px;
+        }
+
+        /* 為了要被倫波紐對位 */
+        .box {
+            width: 500px;
+            height: 350px;
+            position: relative;
+        }
+
+        /* 倫波導覽列 */
+        #nav {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            z-index: 12;
+        }
+
+        #nav a {
+            color: black;
+            text-decoration: none;
+            margin: 5px;
+            display: inline-block;
+            /* 水平堆疊 */
+            /*             border: 3px solid black;*/
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            color: transparent;
+            text-align: center;
+            line-height: 20px;
+            background-color: yellow;
+        }
+
+        #nav a.activeSlide {
+            background-color: brown;
+        }
+
+        .navMask {}
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div id="imgCycle">
+            <img src="./images/01.jpg" alt="">
+            <img src="./images/02.jpg" alt="">
+            <img src="./images/03.jpg" alt="">
+            <img src="./images/04.jpg" alt="">
+            <img src="./images/05.jpg" alt="">
+        </div>
+        <!-- 導覽列，控制樟樹 -->
+        <div class="navMask">
+            <div id="nav"></div>
+        </div>
+    </div>
+
+    <script src="./js/jquery-1.11.3.min.js"></script>
+    <!-- 圖片自動倫波主代碼 -->
+    <script src="./js/jquery.cycle.all.js"></script>
+
+    <script>
+        $(function () {
+            $("#imgCycle").after("<div id='nav'></div>").cycle({
+                fx: 'zoom',
+                sync: false,
+                delay: -2000,
+                // 顯示導覽列，並自動帶出超連結
+                pager: '#nav'
+            });
+        });
+    </script>
+    <!-- 參數在http://jquery.malsup.com/cycle/ ， cycle/options.html有更詳細的參數可以調-->
+</body>
+
+</html>
