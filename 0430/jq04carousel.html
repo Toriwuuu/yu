@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-1.11.3.min.js"></script>
+    <script src="./js/jquery.jcarousellite.min.js"></script>
+    <script>
+        $(function () {
+            $("#carousel, #carousel2").jCarouselLite({
+                auto: 500, //停留多久時間
+                speed: 600, //倫波速度
+                visible: 5, //顯示樟樹
+                scroll: 3, //每次捲動樟樹
+                /* 若參數相同 不用再以另一個function來包 */
+            });
+        });
+    </script>
+    <style>
+        .wrap{
+            width: 1200px;
+            margin: 0 auto;
+            
+
+        }
+        #carousel{
+            margin: 0 auto;
+            /* 靠右 靠左是預設 */
+            float: right;
+
+        }
+        #carousel img, #carousel2 img {
+            width: 150px;
+            height: 120px;
+            margin: 5px;
+        }
+        .clearFix{
+            /* 取消float */
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, velit adipisci? Facere cum officiis aliquam deserunt placeat eos quam incidunt! Soluta accusamus laborum mollitia sint voluptate molestias laboriosam deserunt sequi!</p>
+        <div id="carousel">
+            <ul>
+                <li><img src="./images/01.jpg" alt=""></li>
+                <li><img src="./images/02.jpg" alt=""></li>
+                <li><img src="./images/03.jpg" alt=""></li>
+                <li><img src="./images/04.jpg" alt=""></li>
+                <li><img src="./images/05.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="clearFix"></div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi accusantium a nam nobis eaque ab officia aut, dolorem voluptates maxime tenetur nihil nisi placeat! Debitis soluta nisi libero. Harum, placeat?</p>
+    <div id="carousel2">
+        <ul>
+            <li><img src="./images/02.jpg" alt=""></li>
+            <li><img src="./images/03.jpg" alt=""></li>
+            <li><img src="./images/05.jpg" alt=""></li>
+            <li><img src="./images/06.jpg" alt=""></li>
+            <li><img src="./images/08.jpg" alt=""></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+
+</html>

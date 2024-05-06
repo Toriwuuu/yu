@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        .wrap{
+            width: 4000px;
+            height: 500px;
+        }
+        .container{
+            width: 960px;
+            height: 500px;
+            margin: 0 auto;
+/*             margin-top: 20px;
+ */
+        }
+        nav{
+            opacity: .5;
+            width: 100%;
+            background-color: #333;
+            text-align: center;
+            position: fixed;
+            line-height: 50px;
+        }
+        nav a{
+            color: #FFF;
+            text-decoration: none;
+            margin: 0 30px;
+        }
+        #m1,
+        #m2,
+        #m3,
+        #m4{
+            width: 960px;
+            height: 500px;
+            float: left;
+
+        }
+
+        #m1 {background-color: aqua;}
+        #m2 {background-color: rgb(0, 255, 0);}
+        #m3 {background-color: rgb(255, 0, 0);}
+        #m4 {background-color: rgb(255, 0, 200);}
+        
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+    <nav>
+        <a href="#m1">m1</a>
+        <a href="#m2">m2</a>
+        <a href="#m3">m3</a>
+        <a href="#m4">m4</a>
+    </nav>
+
+        <div class="wrap">
+            <div class="container">
+                <section id="m1"></section>
+                <section id="m2"></section>
+                <section id="m3"></section>
+                <section id="m4"></section>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

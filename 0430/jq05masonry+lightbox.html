@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-1.11.3.min.js"></script>
+    <script src="./js/imagesloaded.pkgd.min.js"></script>
+    <script src="./js/masonry.pkgd.min.js"></script>
+    <script src="./dist/js/lightbox.js"></script>
+    <link rel="stylesheet" href="./dist/css/lightbox.css">
+
+    <script>
+        $(function () {
+            $(".wrap").imagesLoaded(function () {
+                $(".wrap").masonry({
+                    isFitWidth: true //左右留白平均分配
+                });
+            });
+        });
+    </script>
+    </script>
+
+    <style>
+        .wrap {
+            margin: auto;
+            /* 搭配使用isFitWidth: true   */
+        }
+
+        .box {
+            width: 300px;
+            margin-bottom: 5px;
+            margin-right: 5px;
+        }
+
+        .box img {
+            width: 100%;
+            vertical-align: top;
+            /* 取消原本圖片下方的空白 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="box">
+            <a href="./images/illus/always cow.jpg" data-lightbox="group" data-title="">
+                <img src="./images/illus/always cow.jpg" alt="">
+            </a>
+        </div>
+        <div class="box">
+            <a href="./images/illus/Calling.jpg" data-lightbox="group" data-title="">
+                <img src="./images/illus/Calling.jpg" alt="">
+            </a>
+        </div>
+        <div class="box">
+            <a href="./images/illus/Chaos.jpg" data-lightbox="group" data-title="">
+                <img src="./images/illus/Chaos.jpg" alt="">
+            </a>
+        </div>
+        <div class="box">
+            <a href="./images/illus/Don’t wake up.jpg" data-lightbox="group" data-title="">
+                <img src="./images/illus/Don’t wake up.jpg" alt="">
+            </a>
+        </div>
+        <div class="box">
+            <a href="./images/illus/escape.jpg" data-lightbox="group" data-title="">
+                <img src="./images/illus/escape.jpg" alt="">
+            </a>
+        </div>
+        <div class="box">
+            <a href="./images/illus/missing call.jpg" data-lightbox="group" data-title="">
+                <img src="./images/illus/missing call.jpg" alt="">
+            </a>
+        </div>
+        <div class="box">
+            <a href="./images/illus/Moai.jpg" data-lightbox="group" data-title="">
+                <img src="./images/illus/Moai.jpg" alt="">
+            </a>
+        </div>
+        
+
+<!--         <div class="box"><img src="./images/illus/always cow.jpg" alt=""></div>
+        <div class="box"><img src="./images/illus/call me.jpg" alt=""></div>
+        <div class="box"><img src="./images/illus/Calling.jpg" alt=""></div>
+        <div class="box"><img src="./images/illus/escape.jpg" alt=""></div>
+        <div class="box"><img src="./images/illus/Chaos.jpg" alt=""></div>
+        <div class="box"><img src="./images/illus/Don’t wake up.jpg" alt=""></div>
+        <div class="box"><img src="./images/illus/Face.jpg" alt=""></div>
+        <div class="box"><img src="./images/illus/missing call.jpg" alt=""></div>
+        <div class="box"><img src="./images/illus/Moai.jpg" alt=""></div>
+        <div class="box"><img src="./images/illus/always cow.jpg" alt=""></div>
+        <div class="box"><img src="./images/illus/call me.jpg" alt=""></div>
+        <div class="box"><img src="./images/illus/Calling.jpg" alt=""></div>
+        <div class="box"><img src="./images/illus/escape.jpg" alt=""></div>
+        <div class="box"><img src="./images/illus/Chaos.jpg" alt=""></div>
+        <div class="box"><img src="./images/illus/Don’t wake up.jpg" alt=""></div>
+        <div class="box"><img src="./images/illus/Face.jpg" alt=""></div>
+        <div class="box"><img src="./images/illus/missing call.jpg" alt=""></div>
+        <div class="box"><img src="./images/illus/Moai.jpg" alt=""></div>
+ -->    </div>
+    
+</body>
+
+</html>
