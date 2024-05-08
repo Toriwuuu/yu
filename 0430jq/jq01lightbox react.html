@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <link rel="stylesheet" href="./dist/css/lightbox.css">
+    <style>
+        img {
+            width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function MyApp() {
+            return (
+                
+                <>
+                <div className="wrap">
+                    <div className="pic1">
+                        <a href="./images/1.jpg" data-lightbox="image-1" data-title="photo-1">
+                            <img src="./images/1.jpg" alt="" />
+                        </a>
+                        <a href="./images/02.jpg" data-lightbox="image-1" data-title="photo-2">
+                            <img src="./images/02.jpg" alt="" />
+                        </a>
+                    </div>
+
+                    <div className="pic2">
+                        <a href="./images/03.jpg" data-lightbox="gruop" data-title="photo-3">
+                            <img src="./images/03.jpg" alt="" />
+                        </a>
+                        <a href="./images/04.jpg" data-lightbox="gruop" data-title="photo-4">
+                            <img src="./images/04.jpg" alt="" />
+                        </a>
+                        <a href="./images/05.jpg" data-lightbox="gruop" data-title="photo-5">
+                            <img src="./images/05.jpg" alt="" />
+                        </a>
+                        <a href="./images/06.jpg" data-lightbox="gruop" data-title="photo-6">
+                            <img src="./images/06.jpg" alt="" />
+                        </a>
+                    </div>
+                </div>
+            </>
+            
+            );
+        }
+
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+        root.render(<MyApp />);
+    </script>
+
+    <script src="./js/jquery-1.11.3.min.js"></script>
+    <script src="./dist/js/lightbox.js"></script>
+
+    <!--
+        Note: this page is a great way to try React but it's not suitable for production.
+        It slowly compiles JSX with Babel in the browser and uses a large development build of React.
+
+        Read this page for starting a new React project with JSX:
+        https://react.dev/learn/start-a-new-react-project
+
+        Read this page for adding React with JSX to an existing project:
+        https://react.dev/learn/add-react-to-an-existing-project
+    -->
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .fadeBtn {
+            display: block;
+            width: 200px;
+            height: 70px;
+            border: #333 solid 2px;
+            text-align: center;
+            line-height: 70px;
+            font-size: 20px;
+            box-shadow: 0 0 10px #555;
+        }
+    </style>
+    <script src="./0508JSex/JS進階ex/js/jquery-1.11.3.min.js"></script>
+
+    <script>
+        $(function () {
+            $('.fadeBtn').hover(function () {
+                $('.fadeBtn').animate({ fontSize: '22px' }, 300);
+            }
+            , function(){
+                $('.fadeBtn').animate({ fontSize: '16px' }, 300);
+            }
+        );
+
+            
+        });
+        /* animate的{}裡面填CSS，後面毫秒數 */
+    </script>
+
+</head>
+
+<body>
+    <di id="wrapper"><a href="#" class="fadeBtn">按鈕</a></di>
+
+</body>
+
+</html>

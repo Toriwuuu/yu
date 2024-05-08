@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrapper {
+            width: 960px;
+            margin: 50px auto;
+        }
+
+        p {
+            line-height: 1.5;
+            text-align: justify;
+            /* 左右對其 */
+        }
+
+        a {
+            color: red;
+            text-decoration: none;
+        }
+
+        .ttpShow {
+            border: #ccc solid 3px;
+            padding: 10px;
+            text-align: left;
+            background-color: #fff;
+            position: absolute;
+            z-index: 99;
+            display: none;
+        }
+    </style>
+    <script src="./0508JSex/JSex/js/jquery-1.11.3.min.js"></script>
+    <script>
+        //滑鼠事件:mouserover() mousermove mouseout
+        // xy座標:pageX pageY
+        // append():增加選取器
+        // html():取出選取器內容中
+        // 淡入fadeIn()
+        // 淡出fadeOut()
+        // 速度slow, normal,fast
+        // has():傳回被找到的資訊
+
+        $(function () {
+
+
+            $('a:has(.ttpShow)').mouseover(function (e) {
+                $('.ttpShow').css({
+                    top: (e.pageY + 10) + 'px',
+                    left: (e.pageX + 10) + 'px'
+                }).fadeIn('fast');
+            }).mouseout(function(e){
+                $('.ttpShow').fadeOut('fast');
+            }).mousemove(function(e){
+                $('.ttpShow').css({
+                    top:(e.pageY+10)+'px',
+                    left:(e.pageX+10)+'px'
+                });
+            });
+
+/*             $('a:has(.ttpShow)').mouseout(function (e) {
+                $('.ttpShow').fadeOut('fast');
+            });
+
+            $('a:has(.ttpShow)').mousemove(function(e){
+                $('.ttpShow').css({
+                    top:(e.pageY+10)+'px',
+                    left: (e.pageX+10)+'px'
+                });
+            });
+
+ */
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <p>Lorem ipsum dolor sit amet.
+            <a href="#">consectetur
+                <span class="ttpShow">consectetur內容說明</span>
+            </a>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt veniam distinctio aperiam quis vel amet
+            voluptatem. Ex qui eveniet odio eius nostrum ipsam, excepturi doloremque modi accusamus dolorum vero iure.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, ad beatae. Non voluptatem similique cumque
+            error corporis repellendus, assumenda, earum quisquam esse libero nisi sapiente, a voluptatum ab quis vero
+            debitis omnis commodi nemo. Animi accusamus ab sit recusandae atque magni officiis. Possimus cum, vero autem
+            eligendi pariatur quos magnam!
+        </p>
+    </div>
+</body>
+
+</html>

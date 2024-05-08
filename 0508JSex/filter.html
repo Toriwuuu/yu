@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrapper {
+            width: 800px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        #filterBtn {
+            margin-bottom: 50px;
+        }
+
+        #filterBtn a {
+            border: 1px solid #ccc;
+            border-radius: 30px;
+            padding: 5px 30px;
+            margin: 0 10px;
+            background: linear-gradient(white 40%, #ddd 100%)
+        }
+
+        #filterBtn a:hover {
+            background: white
+        }
+
+        /* 作用中:白底粗體紅字 */
+        #filterBtn a.active {
+            background: white;
+            font-weight: 900;
+            color: red;
+        }
+
+        #filterList ul {
+            list-style: none;
+            width: 800px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        #filterList ul li {
+            float: left;
+            width: 150px;
+            margin: 5px;
+        }
+
+        #filterList ul li img {
+            width: 150px;
+        }
+    </style>
+    <script src="./JSex/js/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function () {
+            // 取得所有區塊按鈕
+            var setFilter = $('#filterBtn');
+            //    取得a元素
+            var filterBtn = setFilter.find('a');
+            // 取得按鈕all
+            var btnAll = $('.allItem');
+            // 取得列表中的元素區塊
+            var setList = $('#filterList');
+            // 取得列表中的li
+            var filterList = setList.find('li');
+            // 取得目前寬度
+            var listWidth = filterList.outerWidth();
+
+            // 超連結按鈕被按下時
+            filterBtn.click(function () {
+                // 檢查是否被點選狀態，如果沒有，用hasClass()加上類別active
+                if (!($(this).hasClass('active'))) {
+                    // 取得被點選的類別名稱
+                    var filterClass = $(this).attr('class');
+                    filterBtn.removeClass('active');
+                    $(this).addClass('active');
+
+                    filterList.each(function () {
+                        if ($(this).hasClass(filterClass)) {
+                            // 動畫處理(顯示)
+                            // 1擴展寬度2調整透明顯示圖片
+                            $(this).css({ display: 'block' }).stop().animate({ width: listWidth }, 1500);
+                            $(this).find('*').stop().animate({ opacity: '1' }, 1500);
+                        } else {
+                            // 動畫(隱藏
+                            //調整透明度隱藏圖片 擴展寬度
+                            $(this).find('*').stop().animate({ opacity: '0' }, 1000);
+                            $(this).stop().animate({ width: '0' }, 1000, function () {
+                                $(this).css({ display: 'none' });
+                            });
+                        }
+                    });
+                }
+            });
+            // 全部顯示
+            btnAll.click(function () {
+                filterList.each(function () {
+                    $(this).css({ display: 'block' }).stop().animate({ width: listWidth }, 1500);
+                    $(this).find('*').stop().animate({ opacity: '1' }, 1500);
+                });
+            });
+
+            // 載入時，讓all按鈕為點選狀態
+            btnAll.click();
+        });
+    </script>
+
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <!-- 分類紐 -->
+        <div id="filterBtn">
+            <a href="#" class="allItem">ALL</a>
+            <a href="#" class="cats">CATS</a>
+            <a href="#" class="food">FOOD</a>
+            <a href="#" class="view">VIEW</a>
+        </div>
+
+        <div id="filterList">
+            <ul>
+                <li class="food"><img src="./JSex/images/food4.jpg" alt=""></li>
+                <li class="cats"><img src="./JSex/images/cats1.jpg" alt=""></li>
+                <li class="cats"><img src="./JSex/images/cats3.jpg" alt=""></li>
+                <li class="view"><img src="./JSex/images/view4.jpg" alt=""></li>
+                <li class="cats"><img src="./JSex/images/cats4.jpg" alt=""></li>
+                <li class="food"><img src="./JSex/images/food5.jpg" alt=""></li>
+                <li class="view"><img src="./JSex/images/view2.jpg" alt=""></li>
+                <li class="cats"><img src="./JSex/images/cats5.jpg" alt=""></li>
+                <li class="food"><img src="./JSex/images/food1.jpg" alt=""></li>
+                <li class="cats"><img src="./JSex/images/cats6.jpg" alt=""></li>
+                <li class="view"><img src="./JSex/images/view5.jpg" alt=""></li>
+                <li class="food"><img src="./JSex/images/food2.jpg" alt=""></li>
+                <li class="view"><img src="./JSex/images/view1.jpg" alt=""></li>
+                <li class="cats"><img src="./JSex/images/cats2.jpg" alt=""></li>
+                <li class="view"><img src="./JSex/images/view3.jpg" alt=""></li>
+                <li class="food"><img src="./JSex/images/food3.jpg" alt=""></li>
+
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
