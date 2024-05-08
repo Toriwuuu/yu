@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 12px;
+    background-color: #ececec;
+    color: #000;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+#wrap {
+    width: 1200px;
+    /*     border: 1px solid green;*/
+    margin: 50px auto;
+
+}
+
+#nav {
+    /*     border: 1px solid red; */
+    width: 728px;
+    height: 60px;
+    margin: 0 auto;
+}
+
+#nav>ul>li {
+    /* >讓float left不要影響下一層 ，>指的是只控制最後這個*/
+    position: relative;
+    /*     border: 1px solid blue;*/
+    float: left;
+    width: 180px;
+    margin: 0 1px;
+}
+
+#nav>ul>li>a {
+    display: block;
+    background-color: #fff;
+    line-height: 55px;
+    height: 55px;
+    text-align: center;
+}
+
+ul.subs {
+    /* ul.subs => ul本身的subs ， ul .subs => 下一層的subs */
+    position: absolute;
+    background-color: #fff;
+    width: 180px;
+    top: 100%;
+    /* 100% =>跟原本位子一樣 */
+}
+
+
+
+ul.subs li a {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    /* padding-left: 20px; */
+    /*左縮排:不會破壞原本寬度*/
+    text-indent: 20px;
+}
+
+ul.subs li {
+    position: relative;
+}
+
+/* 第三層 */
+ul.subs li ul {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 182px; /* 含border */
+}
+
+
+ul.subs li ul li a {
+    background-color: #fff;
+}
+
+/* 最後一個選單往左 */
+ul.last li ul{
+    left:-182px;
+}
+
+
+
+
+/* 顏色 第一層 */
+li.color-blue {
+    border-top: 5px solid skyblue;
+}
+li.color-red {
+    border-top: 5px solid red;
+}
+li.color-green {
+    border-top: 5px solid green;
+}
+
+li.color-yellow {
+    border-top: 5px solid yellow;
+}
+
+/* 第二層 */
+li.color-blue ul.subs li:hover a {
+    background-color: skyblue;
+    color: #fff;
+}
+li.color-red ul.subs li:hover a {
+    background-color: red;
+    color: #fff;
+}
+li.color-green ul.subs li:hover a {
+    background-color: green;
+    color: #fff;
+}
+li.color-yellow ul.subs li:hover a {
+    background-color: yellow;
+    color: #fff;
+}
+
+/* 第三層 */
+li.color-blue ul.subs ul li:hover a {
+    background-color: rgb(45, 141, 180);
+    color: #fff;
+}
+
+li.color-red ul.subs ul li:hover a {
+    background-color: rgb(128, 15, 84);
+    color: #fff;
+}
+
+li.color-green ul.subs ul li:hover a {
+    background-color: rgb(18, 105, 101);
+    color: #fff;
+}
+li.color-green ul.subs ul li:hover a {
+    background-color: rgb(122, 129, 26);
+    color: #fff;
+}
